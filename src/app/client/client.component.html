@@ -1,0 +1,45 @@
+<div id="page-content-wrapper">
+
+  <div class="row">
+    <div class="col">
+        <h1>Liste des clients</h1>
+        <button class="btn btn-primary my-3" [routerLink]="['/add-user']">Ajouter un client</button>
+    </div>
+</div>
+  
+  <div class="scrollmenu">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>addresse</th>
+          <th>ville</th>
+          <th>codePostal</th>
+          <th>matFiscale</th>
+          <th>tel</th>
+          <th>fax</th>
+          <th>email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clientsList">
+          <td>{{ client.firstName}}</td>
+          <td>{{ client.secondName}}</td>
+          <td>{{ client.addresse}}</td>
+          <td>{{ client.ville}}</td>
+          <td>{{ client.codePostal}}</td>
+          <td>{{ client.matFiscale}}</td>
+          <td>{{ client.tel}}</td>
+          <td>{{ client.fax}}</td>
+          <td>{{ client.email}}</td>
+
+          <td><button (click)="delete(client)" class="btn btn-danger ">Delete</button>
+            <button (click)="updateClient(client.id)" class="btn btn-info ">Update</button>
+            <button class="btn btn-info " >Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

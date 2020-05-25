@@ -1,0 +1,18 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+#page-content-wrapper {
+  min-width: 100vw;
+}
+body {
+  overflow-x: hidden;
+}
+
+
+
+/* Sur les grands écrans, on limite la largeur du contenu */
+
+@media (min-width: 768px) {
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+}

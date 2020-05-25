@@ -1,0 +1,27 @@
+<div id="page-content-wrapper">
+
+    
+    <div class="scrollmenu">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>codeCompte</th>
+            <th>modeConnexion</th>
+            <th>profil</th>
+            <th>sallePub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let compte of compteList">
+            <td>{{ compte.codeCompte}}</td>
+            <td>{{ compte.modeConnexion}}</td>
+            <td>{{ compte.profil}}</td>
+            <td>{{ compte.sallePub}}</td>
+            <td><button (click)="delete(client)" class="btn btn-danger ">Delete</button>
+              <button (click)="updateClient(client.id)" class="btn btn-info ">Update</button>
+              <button class="btn btn-info">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

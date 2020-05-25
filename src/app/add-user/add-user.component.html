@@ -1,0 +1,136 @@
+<div id="page-content-wrapper">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary my-3" [routerLink]="['/client']">Back</button>
+            <hr>
+            <h1>Ajouter des Clients</h1>
+        </div>
+    </div>
+
+    <form [formGroup]="myForm" (ngSubmit)="createClient()">
+        
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="codeClient">codeClient</label>
+                <input class="form-control" type="text" name="codeClient" id="codeClient" formControlName="codeClient" >
+                <div *ngIf="codeClient.touched && codeClient.invalid">
+                    <small *ngIf="codeClient.errors.required" class="text-danger">codeClient is required<br></small>
+                    <small *ngIf="codeClient.errors.pattern" class="text-danger"> Invalid codeClient <br></small>
+                    <small *ngIf="codeClient.errors.minlength" class="text-danger">codeClient must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="idDouane">idDouane</label>
+                <input class="form-control" type="text" name="idDouane" id="idDouane" formControlName="idDouane">
+                <div *ngIf="idDouane.touched && idDouane.invalid">
+                    <small *ngIf="idDouane.errors.required" class="text-danger">idDouane is required<br></small>
+                    <small *ngIf="idDouane.errors.pattern" class="text-danger">Invalid idDouane<br></small>
+                    <small *ngIf="idDouane.errors.minlength" class="text-danger">idDouane must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="firstName">firstName</label>
+                <input class="form-control" type="text" name="firstName" id="firstName" formControlName="firstName" >
+                <div *ngIf="firstName.touched && firstName.invalid">
+                    <small *ngIf="firstName.errors.required" class="text-danger">firstName is required<br></small>
+                    <small *ngIf="firstName.errors.pattern" class="text-danger">Invalid firstName<br></small>
+                    <small *ngIf="firstName.errors.minlength" class="text-danger">firstName must contain two characters at least</small>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="secondName">secondName</label>
+                <input class="form-control" type="text" name="secondName" id="secondName" formControlName="secondName">
+                <div *ngIf="secondName.touched && secondName.invalid">
+                    <small *ngIf="secondName.errors.required" class="text-danger">secondName is required<br></small>
+                    <small *ngIf="secondName.errors.pattern" class="text-danger">Invalid secondName<br></small>
+                    <small *ngIf="secondName.errors.minlength" class="text-danger">secondName must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="addresse">addresse</label>
+                <input class="form-control" type="text" name="addresse" id="addresse" formControlName="addresse" >
+                <div *ngIf="addresse.touched && addresse.invalid">
+                    <small *ngIf="addresse.errors.required" class="text-danger">addresse is required<br></small>
+                    <small *ngIf="addresse.errors.pattern" class="text-danger">Invalid addresse<br></small>
+                    <small *ngIf="addresse.errors.minlength" class="text-danger">addresse must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="ville">ville</label>
+                <input class="form-control" type="text" name="ville" id="ville" formControlName="ville">
+                <div *ngIf="ville.touched && ville.invalid">
+                    <small *ngIf="ville.errors.required" class="text-danger">ville is required<br></small>
+                    <small *ngIf="ville.errors.pattern" class="text-danger">Invalid ville<br></small>
+                    <small *ngIf="ville.errors.minlength" class="text-danger">ville must contain two characters at least</small>
+                </div>
+            </div>
+        </div>
+        
+        
+      
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="codePostal">codePostal</label>
+                <input class="form-control" type="text" name="codePostal" id="codePostal" formControlName="codePostal" >
+                <div *ngIf="codePostal.touched && codePostal.invalid">
+                    <small *ngIf="codePostal.errors.required" class="text-danger">codePostal is required<br></small>
+                    <small *ngIf="codePostal.errors.pattern" class="text-danger">Invalid codePostal<br></small>
+                    <small *ngIf="codePostal.errors.minlength" class="text-danger">codePostal must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="matFiscale">matFiscale</label>
+                <input class="form-control" type="text" name="matFiscale" id="matFiscale" formControlName="matFiscale" >
+                <div *ngIf="matFiscale.touched && matFiscale.invalid">
+                    <small *ngIf="matFiscale.errors.required" class="text-danger">matFiscale is required<br></small>
+                    <small *ngIf="matFiscale.errors.pattern" class="text-danger">Invalid matFiscale<br></small>
+                    <small *ngIf="matFiscale.errors.minlength" class="text-danger">matFiscale must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label for="tel">tel</label>
+                <input class="form-control" type="text" name="tel" id="tel" formControlName="tel">
+                <div *ngIf="tel.touched && tel.invalid">
+                    <small *ngIf="tel.errors.required" class="text-danger">tel is required<br></small>
+                    <small *ngIf="tel.errors.pattern" class="text-danger">Invalid tel<br></small>
+                    <small *ngIf="tel.errors.minlength" class="text-danger">tel must contain two characters at least</small>
+                </div>
+            </div>
+        </div>
+       
+    
+        <div class="form-row">
+            <div class="form-group col-4">
+                <label for="fax">fax</label>
+                <input class="form-control" type="text" name="fax" id="fax" formControlName="fax">
+                <div *ngIf="fax.touched && fax.invalid">
+                    <small *ngIf="fax.errors.required" class="text-danger">fax is required<br></small>
+                    <small *ngIf="fax.errors.pattern" class="text-danger">Invalid fax<br></small>
+                    <small *ngIf="fax.errors.minlength" class="text-danger">fax must contain two characters at least</small>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label for="email">email</label>
+                <input class="form-control" type="text" name="email" id="email" formControlName="email">
+                <div *ngIf="email.touched && email.invalid">
+                    <small *ngIf="email.errors.required" class="text-danger">email is required<br></small>
+                    <small *ngIf="email.errors.pattern" class="text-danger">Invalid email<br></small>
+                    <small *ngIf="email.errors.minlength" class="text-danger">email must contain two characters at least</small>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Ajouter" [disabled]="myForm.invalid" class="btn btn-primary"  >
+            </div>
+        </div>
+    </form>
+
+</div>
+    
