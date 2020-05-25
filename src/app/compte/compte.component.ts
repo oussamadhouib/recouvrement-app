@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../compte.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-compte',
@@ -9,14 +10,17 @@ import { CompteService } from '../compte.service';
 export class CompteComponent implements OnInit {
 
   compteList = [];
+  id : any;
 
-  constructor(private compteService : CompteService) { }
+  constructor(private compteService : CompteService , private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.id=this.route.snapshot.params['id'];
+    this.getCompte(this.id);
     this.reloadData();
   }
   reloadData() {
-    this.compteService.getAllComptes().subscribe(
+    this.compteService.getAllComptes(this.id).subscribe(
       result =>{
         this.compteList = result;
 
@@ -28,8 +32,8 @@ export class CompteComponent implements OnInit {
     )
   }
   
-  getCompte() {
-    this.compteService.getAllComptes().subscribe(
+  getCompte(id) {
+    this.compteService.getAllComptes(id).subscribe(
       result =>{
         console.log(result);
         this.reloadData();

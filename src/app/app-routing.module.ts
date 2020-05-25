@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'listeClients', component: ListeclientsComponent },
   { path: 'add-user', component: AddUserComponent },
-  { path: 'compte', component: CompteComponent },
+  { path: 'compte/:id', component: CompteComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
